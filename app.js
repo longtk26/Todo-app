@@ -33,11 +33,10 @@ const listSchema = new mongoose.Schema({
 const Item = mongoose.model("Item", itemsSchema);
 const List = mongoose.model("List", listSchema);
 
-const learnJs = new Item({ name: "learnJs" });
-const learnReact = new Item({ name: "learnReact" });
-const learnNode = new Item({ name: "learnNode" });
+const item1 = new Item({ name: "Welcome to your to do list !" });
+const item2 = new Item({ name: "<--- Hit box to delete item" });
 
-const defaultItems = [learnJs, learnReact, learnNode];
+const defaultItems = [item1, item2];
 
 const getDefaultItems = async (res) => {
     try {
