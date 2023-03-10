@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -58,10 +59,6 @@ const getDefaultItems = async (res) => {
 
 app.get("/", (req, res) => {
     getDefaultItems(res);
-});
-
-app.get("/about", (req, res) => {
-    res.render("about");
 });
 
 app.get("/:anotherList", (req, res) => {
